@@ -1,7 +1,7 @@
 package duoc.despacho.cl.msdespacho.service.impl;
 
-import duoc.despacho.cl.msdespacho.DTO.DespachoRequest;
-import duoc.despacho.cl.msdespacho.DTO.DespachoResponse;
+import duoc.despacho.cl.msdespacho.dto.DespachoRequest;
+import duoc.despacho.cl.msdespacho.dto.DespachoResponse;
 import duoc.despacho.cl.msdespacho.exception.RecursoNoEncontradoException;
 import duoc.despacho.cl.msdespacho.mapper.DespachoMapper;
 import duoc.despacho.cl.msdespacho.model.Despacho;
@@ -9,15 +9,17 @@ import duoc.despacho.cl.msdespacho.model.EstadoDespacho;
 import duoc.despacho.cl.msdespacho.repository.DespachoRepository;
 import duoc.despacho.cl.msdespacho.service.DespachoService;
 import java.util.List;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@RequiredArgsConstructor
 public class DespachoServiceImpl implements DespachoService {
 
     private final DespachoRepository despachoRepository;
+
+    public DespachoServiceImpl(DespachoRepository despachoRepository) {
+        this.despachoRepository = despachoRepository;
+    }
 
     @Override
     @Transactional

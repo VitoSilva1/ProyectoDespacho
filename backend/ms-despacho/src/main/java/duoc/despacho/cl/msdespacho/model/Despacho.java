@@ -11,19 +11,9 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "despachos")
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Despacho {
 
     @Id
@@ -50,6 +40,75 @@ public class Despacho {
 
     @Column(nullable = false)
     private LocalDateTime fechaActualizacion;
+
+    protected Despacho() {
+    }
+
+    public Despacho(
+            Long pedidoId,
+            String direccionOrigen,
+            String direccionDestino,
+            Long conductorId,
+            EstadoDespacho estado
+    ) {
+        this.pedidoId = pedidoId;
+        this.direccionOrigen = direccionOrigen;
+        this.direccionDestino = direccionDestino;
+        this.conductorId = conductorId;
+        this.estado = estado;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getPedidoId() {
+        return pedidoId;
+    }
+
+    public void setPedidoId(Long pedidoId) {
+        this.pedidoId = pedidoId;
+    }
+
+    public String getDireccionOrigen() {
+        return direccionOrigen;
+    }
+
+    public void setDireccionOrigen(String direccionOrigen) {
+        this.direccionOrigen = direccionOrigen;
+    }
+
+    public String getDireccionDestino() {
+        return direccionDestino;
+    }
+
+    public void setDireccionDestino(String direccionDestino) {
+        this.direccionDestino = direccionDestino;
+    }
+
+    public Long getConductorId() {
+        return conductorId;
+    }
+
+    public void setConductorId(Long conductorId) {
+        this.conductorId = conductorId;
+    }
+
+    public EstadoDespacho getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoDespacho estado) {
+        this.estado = estado;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public LocalDateTime getFechaActualizacion() {
+        return fechaActualizacion;
+    }
 
     @PrePersist
     void prePersist() {

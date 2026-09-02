@@ -1,7 +1,7 @@
 package duoc.despacho.cl.msdespacho.service;
 
-import duoc.despacho.cl.msdespacho.DTO.DespachoRequest;
-import duoc.despacho.cl.msdespacho.DTO.DespachoResponse;
+import duoc.despacho.cl.msdespacho.dto.DespachoRequest;
+import duoc.despacho.cl.msdespacho.dto.DespachoResponse;
 import duoc.despacho.cl.msdespacho.model.EstadoDespacho;
 import java.util.List;
 

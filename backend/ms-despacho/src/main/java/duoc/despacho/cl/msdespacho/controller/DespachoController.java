@@ -1,12 +1,11 @@
 package duoc.despacho.cl.msdespacho.controller;
 
-import duoc.despacho.cl.msdespacho.DTO.DespachoRequest;
-import duoc.despacho.cl.msdespacho.DTO.DespachoResponse;
+import duoc.despacho.cl.msdespacho.dto.DespachoRequest;
+import duoc.despacho.cl.msdespacho.dto.DespachoResponse;
 import duoc.despacho.cl.msdespacho.model.EstadoDespacho;
 import duoc.despacho.cl.msdespacho.service.DespachoService;
 import java.net.URI;
 import java.util.List;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/despachos")
-@RequiredArgsConstructor
 public class DespachoController {
 
     private final DespachoService despachoService;
+
+    public DespachoController(DespachoService despachoService) {
+        this.despachoService = despachoService;
+    }
 
     @PostMapping
     public ResponseEntity<DespachoResponse> crear(@RequestBody DespachoRequest request) {

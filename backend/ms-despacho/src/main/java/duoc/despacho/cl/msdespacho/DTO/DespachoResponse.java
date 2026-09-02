@@ -1,4 +1,4 @@
-package duoc.despacho.cl.msdespacho.DTO;
+package duoc.despacho.cl.msdespacho.dto;
 
 import duoc.despacho.cl.msdespacho.model.EstadoDespacho;
 import java.time.LocalDateTime;
