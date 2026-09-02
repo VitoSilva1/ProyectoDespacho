@@ -1,4 +1,4 @@
-package com.proyectoDespacho.demo;
+package com.proyectoDespacho;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
